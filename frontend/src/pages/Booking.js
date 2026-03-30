@@ -19,13 +19,22 @@ const Booking = () => {
   });
   const [loading, setLoading] = useState(false);
   const [bookingComplete, setBookingComplete] = useState(false);
+  const [stylists, setStylists] = useState([]);
+
+  React.useEffect(() => {
+    fetchStylists();
+  }, []);
+
+  const fetchStylists = async () => {
+    try {
+      const { data } = await axios.get(`${BACKEND_URL}/api/stylists`);
+      setStylists(data.filter(s => s.is_available));
+    } catch (error) {
+      console.error('Failed to fetch stylists', error);
+    }
+  };
 
   const serviceCategories = ['Hair', 'Nails', 'Skin & Facial', 'Bridal', 'Spa & Wellness', "Men's Grooming"];
-  const stylists = [
-    { name: 'Priya Sharma', specialty: 'Hair Specialist' },
-    { name: 'Anjali Patel', specialty: 'Bridal Makeup Expert' },
-    { name: 'Ravi Kumar', specialty: 'Men\'s Grooming' },
-  ];
   const timeSlots = {
     morning: ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM'],
     afternoon: ['12:00 PM', '12:30 PM', '1:00 PM', '2:00 PM', '3:00 PM'],

@@ -98,6 +98,27 @@ class Booking(BaseModel):
 class BookingStatusUpdate(BaseModel):
     status: str
 
+class StylistCreate(BaseModel):
+    name: str
+    photo_url: str
+    specialty: str
+    is_available: bool = True
+
+class Stylist(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    photo_url: str
+    specialty: str
+    is_available: bool = True
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class StylistUpdate(BaseModel):
+    name: Optional[str] = None
+    photo_url: Optional[str] = None
+    specialty: Optional[str] = None
+    is_available: Optional[bool] = None
+
 @api_router.post("/auth/login")
 async def login(credentials: LoginRequest, response: Response):
     email = credentials.email.lower().strip()
@@ -157,6 +178,43 @@ async def update_booking_status(booking_id: str, status_update: BookingStatusUpd
         raise HTTPException(status_code=404, detail="Booking not found")
     return {"message": "Status updated successfully"}
 
+@api_router.post("/stylists", response_model=Stylist)
+async def create_stylist(stylist_input: StylistCreate, request: Request):
+    await get_current_user(request)
+    stylist_dict = stylist_input.model_dump()
+    stylist_obj = Stylist(**stylist_dict)
+    doc = stylist_obj.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.stylists.insert_one(doc)
+    return stylist_obj
+
+@api_router.get("/stylists", response_model=List[Stylist])
+async def get_stylists():
+    stylists = await db.stylists.find({}, {"_id": 0}).to_list(1000)
+    for stylist in stylists:
+        if isinstance(stylist['created_at'], str):
+            stylist['created_at'] = datetime.fromisoformat(stylist['created_at'])
+    return stylists
+
+@api_router.patch("/stylists/{stylist_id}")
+async def update_stylist(stylist_id: str, stylist_update: StylistUpdate, request: Request):
+    await get_current_user(request)
+    update_data = {k: v for k, v in stylist_update.model_dump().items() if v is not None}
+    if not update_data:
+        raise HTTPException(status_code=400, detail="No fields to update")
+    result = await db.stylists.update_one({"id": stylist_id}, {"$set": update_data})
+    if result.modified_count == 0:
+        raise HTTPException(status_code=404, detail="Stylist not found")
+    return {"message": "Stylist updated successfully"}
+
+@api_router.delete("/stylists/{stylist_id}")
+async def delete_stylist(stylist_id: str, request: Request):
+    await get_current_user(request)
+    result = await db.stylists.delete_one({"id": stylist_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Stylist not found")
+    return {"message": "Stylist deleted successfully"}
+
 async def seed_admin():
     admin_email = os.environ.get("ADMIN_EMAIL", "admin@artistrysalon.com")
     admin_password = os.environ.get("ADMIN_PASSWORD", "Admin@123")
@@ -184,13 +242,51 @@ async def seed_admin():
         f.write(f"## Auth Endpoints\n")
         f.write(f"- POST /api/auth/login\n")
         f.write(f"- GET /api/auth/me\n")
-        f.write(f"- POST /api/auth/logout\n")
+        f.write(f"- POST /api/auth/logout\n\n")
+        f.write(f"## Staff Management\n")
+        f.write(f"- GET /api/stylists (public)\n")
+        f.write(f"- POST /api/stylists (admin only)\n")
+        f.write(f"- PATCH /api/stylists/:id (admin only)\n")
+        f.write(f"- DELETE /api/stylists/:id (admin only)\n")
+
+async def seed_stylists():
+    existing_count = await db.stylists.count_documents({})
+    if existing_count == 0:
+        initial_stylists = [
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Priya Sharma",
+                "photo_url": "https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg",
+                "specialty": "Hair Specialist",
+                "is_available": True,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Anjali Patel",
+                "photo_url": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+                "specialty": "Bridal Makeup Expert",
+                "is_available": True,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Ravi Kumar",
+                "photo_url": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg",
+                "specialty": "Men's Grooming",
+                "is_available": True,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            }
+        ]
+        await db.stylists.insert_many(initial_stylists)
 
 @app.on_event("startup")
 async def startup_event():
     await seed_admin()
+    await seed_stylists()
     await db.users.create_index("email", unique=True)
     await db.bookings.create_index("id")
+    await db.stylists.create_index("id")
 
 app.include_router(api_router)
 
