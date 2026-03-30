@@ -1,0 +1,157 @@
+{
+  "theme": "Dark",
+  "archetype": "5 - Jewel & Luxury",
+  "brand": "Artistry Family Salon",
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Cormorant Garamond, serif",
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap",
+        "description": "Elegant, serif font for all primary headings (H1-H4). Imparts a luxury, spa-like feel.",
+        "tailwind_class": "font-serif"
+      },
+      "body": {
+        "family": "Lato, sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",
+        "description": "Clean, highly readable sans-serif for body text, forms, and small labels.",
+        "tailwind_class": "font-sans"
+      }
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none",
+      "h2": "text-3xl sm:text-4xl tracking-tight leading-tight",
+      "h3": "text-2xl sm:text-3xl tracking-tight",
+      "h4": "text-xl sm:text-2xl",
+      "body": "text-base leading-relaxed text-[#F5F0E8]/80",
+      "small": "text-sm tracking-wide text-[#F5F0E8]/60",
+      "overline": "text-xs sm:text-sm uppercase tracking-[0.2em] font-bold text-[#E8D5A3]"
+    }
+  },
+  "colors": {
+    "primary_background": "#0A0A0A",
+    "secondary_background": "#111111",
+    "card_background": "#1A1A1A",
+    "text_cream": "#F5F0E8",
+    "gold_accent": "#C9A84C",
+    "champagne_accent": "#E8D5A3",
+    "button_default": "#C9A84C",
+    "button_hover": "#DFC06E",
+    "border_gold_subtle": "rgba(201, 168, 76, 0.2)",
+    "border_gold_strong": "rgba(201, 168, 76, 0.5)",
+    "whatsapp_green": "#25D366"
+  },
+  "tailwind_config_extensions": {
+    "colors": {
+      "salon-black": "#0A0A0A",
+      "salon-charcoal": "#111111",
+      "salon-card": "#1A1A1A",
+      "salon-cream": "#F5F0E8",
+      "salon-gold": "#C9A84C",
+      "salon-champagne": "#E8D5A3"
+    },
+    "fontFamily": {
+      "serif": ["'Cormorant Garamond'", "serif"],
+      "sans": ["'Lato'", "sans-serif"]
+    }
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-20 md:py-32",
+    "card_padding": "p-6 sm:p-8",
+    "gap_standard": "gap-8 lg:gap-12",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8",
+    "mobile_interactive_min_height": "min-h-[48px]",
+    "borders": "rounded-sm border border-salon-gold/20"
+  },
+  "micro_themes": {
+    "glass_header": "bg-salon-black/80 backdrop-blur-xl border-b border-salon-gold/20 z-50",
+    "luxury_card": "bg-salon-card border border-salon-gold/20 shadow-lg shadow-black/50 hover:border-salon-gold/50 transition-colors duration-300 rounded-sm",
+    "hero_overlay": "bg-gradient-to-r from-salon-black/90 via-salon-black/60 to-salon-black/30"
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-salon-gold text-salon-black font-semibold min-h-[48px] px-8 py-3 rounded-sm hover:bg-[#DFC06E] transition-all duration-300 flex items-center justify-center gap-2 text-base",
+      "secondary": "bg-transparent text-salon-gold border border-salon-gold min-h-[48px] px-8 py-3 rounded-sm hover:bg-salon-gold/10 transition-all duration-300 flex items-center justify-center gap-2",
+      "whatsapp_fab": "fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
+    },
+    "inputs": {
+      "standard": "min-h-[48px] w-full bg-salon-black border border-salon-gold/30 rounded-sm px-4 py-2 text-salon-cream focus:border-salon-gold focus:ring-1 focus:ring-salon-gold outline-none transition-all placeholder:text-salon-cream/30"
+    },
+    "booking_stepper": {
+      "container": "w-full mb-8",
+      "track": "h-1 w-full bg-salon-charcoal rounded-full overflow-hidden",
+      "fill": "h-full bg-salon-gold transition-all duration-500 ease-in-out",
+      "text": "text-sm text-salon-champagne font-sans mt-2 text-right block"
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": "Full screen (min-h-[90vh]) with 'hero_background' or 'model_portrait'. Heavy left-aligned text emphasizing luxury. Primary 'Book Appointment' CTA.",
+      "features": "3-column grid showing key value props (Luxury Experience, Expert Stylists, Premium Products).",
+      "services_preview": "Bento grid (Mode A: Tetris) highlighting categories (Hair, Bridal, Spa).",
+      "reviews": "Testimonial carousel or masonry grid using luxury_card style."
+    },
+    "services": {
+      "layout": "Tabs component (Shadcn customized) filtering by: Hair, Nails, Skin, Bridal, Spa, Men's.",
+      "cards": "List or grid of services with titles (Cormorant), descriptions, prices, and 'Book' button."
+    },
+    "booking": {
+      "flow": "Multi-step form (Step 1: Service, Step 2: Stylist, Step 3: Date/Time, Step 4: Details). Must include progress bar. Use Shadcn Calendar and Select components heavily styled to dark/gold theme.",
+      "ux": "Max 2 taps per selection. Clear loading states and success confirmation."
+    },
+    "gallery": {
+      "layout": "Asymmetric masonry or bento grid. Click to open lightbox (Shadcn Dialog/Carousel)."
+    },
+    "about": {
+      "content": "Salon history, 'Meet the Team' (stylist portraits), statistics (Years of Experience, Happy Clients)."
+    },
+    "contact": {
+      "layout": "Split layout: Contact form (left) and Map/Info (right). Include address: G-4, Gajanand The Business Hub, Nana Bazaar, Vallabh Vidyanagar, Bakrol, Anand."
+    },
+    "admin_dashboard": {
+      "layout": "Password-protected (mock auth or simple JWT). Use 'Control Room' dense grid. Tables for upcoming bookings, status toggles (Pending, Confirmed, Completed)."
+    }
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/21031387/pexels-photo-21031387.jpeg",
+      "description": "Intricate golden wave patterns creating a luxurious abstract art piece."
+    },
+    "salon_interior": {
+      "url": "https://images.pexels.com/photos/13068357/pexels-photo-13068357.jpeg",
+      "description": "Sleek beauty salon interior with contemporary furniture."
+    },
+    "service_hair": {
+      "url": "https://images.pexels.com/photos/3993451/pexels-photo-3993451.jpeg",
+      "description": "Professional hairstylist washing hair."
+    },
+    "service_bridal": {
+      "url": "https://images.pexels.com/photos/17476244/pexels-photo-17476244.jpeg",
+      "description": "Bride receiving professional makeup touches."
+    },
+    "service_spa": {
+      "url": "https://images.pexels.com/photos/19666192/pexels-photo-19666192.jpeg",
+      "description": "Serene spa setting, woman receiving neck massage."
+    },
+    "service_nails": {
+      "url": "https://images.pexels.com/photos/34871614/pexels-photo-34871614.jpeg",
+      "description": "Close-up of a hand with artistic red manicure."
+    },
+    "model_portrait": {
+      "url": "https://images.pexels.com/photos/18367697/pexels-photo-18367697.jpeg",
+      "description": "Portrait of young woman with beautiful hair."
+    }
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: Inject Google Fonts ('Cormorant Garamond' and 'Lato') into the main HTML/CSS immediately.",
+    "CRITICAL: Adhere STRICTLY to the color palette. No generic grays or standard Tailwind blues. Use the salon-black, salon-charcoal, and salon-gold definitions.",
+    "CRITICAL: All interactive elements MUST have a min-height of 48px to satisfy the mobile-first 'thumb-friendly' requirement.",
+    "CRITICAL: The Booking process must be multi-step with a clear progress indicator (e.g., 'Step 1 of 4') and max 2 taps per step on mobile.",
+    "CRITICAL: Ensure the WhatsApp Floating Action Button (FAB) is globally present and fixed at bottom-right.",
+    "CRITICAL: Ensure the Nav bar is sticky at the top, uses glassmorphism, and ALWAYS contains the 'Book Now' CTA button.",
+    "CRITICAL: Do NOT use rounded-lg or rounded-xl for containers. Use sharp corners (rounded-none) or very subtle (rounded-sm) to maintain the premium, architectural aesthetic.",
+    "TESTING: Every single button, link, and form input MUST contain a 'data-testid' attribute (e.g., data-testid='booking-submit-btn').",
+    "ASSETS: NEVER use placeholder images (via.placeholder.com). Use ONLY the URLs provided in the 'media' object above. If more are needed, reuse them creatively.",
+    "COMPONENTS: Prefer raw HTML/Tailwind for artistic marketing sections. Use customized Shadcn UI for forms, tabs, dropdowns, and dialogs."
+  ]
+}
