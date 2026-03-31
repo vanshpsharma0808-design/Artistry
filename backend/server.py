@@ -157,14 +157,14 @@ async def create_booking(booking_input: BookingCreate):
     return booking_obj
 
 @api_router.get("/bookings", response_model=List[Booking])
-async def get_bookings(request: Request, date: Optional[str] = None):
+async def get_bookings(request: Request, date: Optional[str] = None, limit: int = 100, skip: int = 0):
     await get_current_user(request)
     
     query = {}
     if date:
         query["date"] = date
     
-    bookings = await db.bookings.find(query, {"_id": 0}).sort("created_at", -1).to_list(1000)
+    bookings = await db.bookings.find(query, {"_id": 0}).sort("created_at", -1).skip(skip).limit(min(limit, 100)).to_list(limit)
     for booking in bookings:
         if isinstance(booking['created_at'], str):
             booking['created_at'] = datetime.fromisoformat(booking['created_at'])
@@ -190,7 +190,7 @@ async def create_stylist(stylist_input: StylistCreate, request: Request):
 
 @api_router.get("/stylists", response_model=List[Stylist])
 async def get_stylists():
-    stylists = await db.stylists.find({}, {"_id": 0}).to_list(1000)
+    stylists = await db.stylists.find({}, {"_id": 0}).limit(50).to_list(50)
     for stylist in stylists:
         if isinstance(stylist['created_at'], str):
             stylist['created_at'] = datetime.fromisoformat(stylist['created_at'])
@@ -293,7 +293,7 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=[os.environ.get('FRONTEND_URL', '*')],
+    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
     allow_methods=["*"],
     allow_headers=["*"],
 )
