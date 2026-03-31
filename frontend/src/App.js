@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import MobileBottomBar from "./components/MobileBottomBar";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Booking from "./pages/Booking";
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                   </Routes>
                   <Footer />
+                  <MobileBottomBar />
                 </>
               }
             />

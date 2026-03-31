@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import SEO from '../components/SEO';
 
 const Services = () => {
   const servicesData = {
@@ -49,7 +50,12 @@ const Services = () => {
   };
 
   return (
-    <div className="bg-salon-black min-h-screen pt-16">
+    <div className="bg-salon-black min-h-screen pt-16 pb-20 md:pb-0">
+      <SEO 
+        title="Our Services | Artistry Family Salon Anand"
+        description="Explore our premium hair, skin, bridal, nails, spa and men's grooming services. Expert stylists using top brands. Book your appointment today."
+      />
+      
       <div className="py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-salon-gold mb-4 text-center" data-testid="services-title">
@@ -61,12 +67,12 @@ const Services = () => {
 
           <Tabs defaultValue="hair" className="w-full">
             <TabsList className="w-full grid grid-cols-2 md:grid-cols-6 bg-salon-card border border-salon-gold/20 p-2 rounded-sm mb-8">
-              <TabsTrigger value="hair" data-testid="tab-hair" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans">Hair</TabsTrigger>
-              <TabsTrigger value="nails" data-testid="tab-nails" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans">Nails</TabsTrigger>
-              <TabsTrigger value="skin" data-testid="tab-skin" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans">Skin</TabsTrigger>
-              <TabsTrigger value="bridal" data-testid="tab-bridal" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans">Bridal</TabsTrigger>
-              <TabsTrigger value="spa" data-testid="tab-spa" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans">Spa</TabsTrigger>
-              <TabsTrigger value="mens" data-testid="tab-mens" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans">Men's</TabsTrigger>
+              <TabsTrigger value="hair" data-testid="tab-hair" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans min-h-[48px]">Hair</TabsTrigger>
+              <TabsTrigger value="nails" data-testid="tab-nails" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans min-h-[48px]">Nails</TabsTrigger>
+              <TabsTrigger value="skin" data-testid="tab-skin" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans min-h-[48px]">Skin</TabsTrigger>
+              <TabsTrigger value="bridal" data-testid="tab-bridal" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans min-h-[48px]">Bridal</TabsTrigger>
+              <TabsTrigger value="spa" data-testid="tab-spa" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans min-h-[48px]">Spa</TabsTrigger>
+              <TabsTrigger value="mens" data-testid="tab-mens" className="data-[state=active]:bg-salon-gold data-[state=active]:text-salon-black font-sans min-h-[48px]">Men's</TabsTrigger>
             </TabsList>
 
             {Object.keys(servicesData).map((category) => (
@@ -75,7 +81,7 @@ const Services = () => {
                   {servicesData[category].map((service, idx) => (
                     <div
                       key={idx}
-                      className="bg-salon-card border border-salon-gold/20 p-6 rounded-sm hover:border-salon-gold/50 transition-colors duration-300"
+                      className="bg-salon-card border border-salon-gold/20 p-6 rounded-sm hover:border-salon-gold/50 transition-all duration-300 hover-lift"
                       data-testid={`service-card-${category}-${idx}`}
                     >
                       <h3 className="font-serif text-xl text-salon-cream mb-2">{service.name}</h3>
@@ -85,7 +91,7 @@ const Services = () => {
                         <Link
                           to="/booking"
                           data-testid={`book-btn-${category}-${idx}`}
-                          className="bg-salon-gold text-salon-black font-semibold px-6 py-2 rounded-sm hover:bg-[#DFC06E] transition-colors text-sm"
+                          className="bg-salon-gold text-salon-black font-semibold min-h-[48px] px-6 py-3 rounded-sm hover:bg-[#DFC06E] transition-all duration-300 text-sm flex items-center"
                         >
                           Book
                         </Link>
