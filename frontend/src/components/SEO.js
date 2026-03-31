@@ -24,8 +24,8 @@ const SEO = ({
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "22.5448",
-      "longitude": "72.9289"
+      "latitude": "22.560621",
+      "longitude": "72.9254909"
     },
     "url": "https://premium-salon-anand.preview.emergentagent.com",
     "telephone": "+91XXXXXXXXXX",
