@@ -22,8 +22,44 @@
         Learn how to configure a non-root public URL by running `npm run build`.
         -->
         <title>Artistry Family Salon | Best Family Salon in Vallabh Vidyanagar, Anand</title>
+        <style>
+            /* Force hide any Emergent badges */
+            #emergent-badge,
+            a[href*="emergent.sh"],
+            a[href*="utm_source=emergent-badge"],
+            [id*="emergent"][id*="badge"] {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+                position: absolute !important;
+                left: -9999px !important;
+            }
+        </style>
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
         <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+        <script>
+            // Remove any dynamically added Emergent badges
+            document.addEventListener('DOMContentLoaded', function() {
+                const removeBadges = () => {
+                    const badges = document.querySelectorAll('#emergent-badge, a[href*="emergent.sh"][href*="badge"], [id*="emergent"][id*="badge"]');
+                    badges.forEach(badge => {
+                        if (badge && badge.parentNode) {
+                            badge.parentNode.removeChild(badge);
+                        }
+                    });
+                };
+                
+                removeBadges();
+                
+                // Check periodically in case badge is added dynamically
+                const observer = new MutationObserver(removeBadges);
+                observer.observe(document.body, { childList: true, subtree: true });
+                
+                // Also check after 1 second
+                setTimeout(removeBadges, 1000);
+            });
+        </script>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
