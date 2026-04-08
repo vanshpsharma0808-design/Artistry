@@ -4,9 +4,9 @@ import AnimatedSection from '../AnimatedSection';
 
 const ReviewsSection = () => {
   const reviews = [
-    { name: 'Priya Shah', rating: 5, text: 'Best salon experience in Anand! The staff is so professional and caring.' },
+    { name: 'Priya Shah', rating: 5, text: 'Best salon experience! The staff is so professional and caring.' },
     { name: 'Rohan Patel', rating: 5, text: 'Amazing haircut and beard styling. Highly recommend for men\'s grooming!' },
-    { name: 'Neha Desai', rating: 5, text: 'My bridal makeup was absolutely stunning. Thank you Artistry!' },
+    { name: 'Neha Desai', rating: 5, text: 'My bridal makeup was absolutely stunning. Thank you Demo Salon!' },
   ];
 
   return (

@@ -20,12 +20,12 @@ const About = () => {
       <div className="py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-salon-gold mb-8 text-center" data-testid="about-title">
-            About Artistry Family Salon
+            About Demo Salon
           </h1>
 
           <div className="max-w-3xl mx-auto mb-20">
             <p className="text-salon-cream/80 font-sans text-base leading-relaxed mb-6 text-center">
-              Artistry Family Salon was founded with one vision — to bring world-class beauty services to the heart of Vallabh Vidyanagar. We believe that every visit should be an experience, not just an appointment.
+              Demo Salon was founded with one vision — to bring world-class beauty services to our community. We believe that every visit should be an experience, not just an appointment.
             </p>
             <p className="text-salon-cream/80 font-sans text-base leading-relaxed text-center">
               Our team of expert stylists uses only premium products and cutting-edge techniques to ensure you leave feeling confident and beautiful. From precision haircuts to luxurious bridal makeup, we offer comprehensive services for the entire family.

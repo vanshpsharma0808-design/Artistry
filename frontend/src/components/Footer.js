@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-serif text-2xl font-bold text-salon-gold mb-4" data-testid="footer-logo">Artistry Family Salon</h3>
+            <h3 className="font-serif text-2xl font-bold text-salon-gold mb-4" data-testid="footer-logo">Demo Salon</h3>
             <p className="text-salon-cream/80 font-sans text-sm leading-relaxed">
               Where every visit is an experience. Premium beauty services for the entire family.
             </p>
@@ -20,7 +20,7 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-salon-gold mt-1" />
                 <p className="text-salon-cream/80 text-sm font-sans">
-                  G-4, Gajanand The Business Hub, Nana Bazaar, Vallabh Vidyanagar, Bakrol, Anand, Gujarat 388315
+                  123 Main Street, Your City
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-salon-gold/10 text-center">
-          <p className="text-salon-cream/60 text-sm font-sans">© 2026 Artistry Family Salon. All rights reserved.</p>
+          <p className="text-salon-cream/60 text-sm font-sans">© 2026 Demo Salon. All rights reserved.</p>
         </div>
       </div>
     </footer>

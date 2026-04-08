@@ -10,7 +10,7 @@ const MobileBottomBar = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Artistry%20Family%20Salon', '_blank');
+    window.open('https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Demo%20Salon', '_blank');
   };
 
   const handleBookNow = () => {

@@ -32,7 +32,7 @@ const Navbar = () => {
               className="font-serif text-2xl font-bold text-salon-gold transition-all duration-300 hover:text-salon-rose-gold" 
               data-testid="nav-logo"
             >
-              Artistry Family Salon
+              Demo Salon
             </Link>
 
             <div className="hidden md:flex items-center gap-8">

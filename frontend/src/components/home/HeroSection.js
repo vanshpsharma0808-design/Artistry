@@ -21,7 +21,7 @@ const HeroSection = () => {
           className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-salon-gold mb-6 tracking-tight leading-none fade-in-up drop-shadow-lg" 
           data-testid="home-hero-title"
         >
-          Artistry Family Salon
+          Demo Salon
         </h1>
         <p 
           className="font-sans text-xl sm:text-2xl text-salon-cream mb-8 max-w-2xl fade-in-up drop-shadow-md" 

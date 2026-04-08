@@ -2,34 +2,21 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 const SEO = ({ 
-  title = 'Artistry Family Salon | Best Family Salon in Vallabh Vidyanagar, Anand',
-  description = 'Book hair, skin, bridal and nail services at Artistry Family Salon in Anand, Gujarat. Expert stylists, premium products, walk-ins welcome.',
-  image = 'https://images.pexels.com/photos/21031387/pexels-photo-21031387.jpeg',
+  title = 'Demo Salon | Premium Beauty Services',
+  description = 'Book hair, skin, bridal and nail services at Demo Salon. Expert stylists, premium products, walk-ins welcome.',
+  image = '/hero-salon.png',
   url = 'https://premium-salon-anand.preview.emergentagent.com',
   type = 'website'
 }) => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
-    "name": "Artistry Family Salon",
-    "description": "Premium family salon offering hair, skin, bridal and nail services in Anand, Gujarat",
-    "image": "https://images.pexels.com/photos/21031387/pexels-photo-21031387.jpeg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "G-4, Gajanand The Business Hub, Nana Bazaar",
-      "addressLocality": "Vallabh Vidyanagar, Bakrol",
-      "addressRegion": "Gujarat",
-      "postalCode": "388315",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "22.560621",
-      "longitude": "72.9254909"
-    },
+    "name": "Demo Salon",
+    "description": "Premium salon offering hair, skin, bridal and nail services",
+    "image": "/hero-salon.png",
     "url": "https://premium-salon-anand.preview.emergentagent.com",
     "telephone": "+91XXXXXXXXXX",
-    "priceRange": "₹₹",
+    "priceRange": "$$",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -55,7 +42,7 @@ const SEO = ({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content="salon anand, beauty salon vallabh vidyanagar, bridal makeup anand, hair salon gujarat, family salon anand, best salon anand" />
+      <meta name="keywords" content="salon, beauty salon, bridal makeup, hair salon, family salon, best salon" />
       
       {/* Open Graph */}
       <meta property="og:type" content={type} />
@@ -63,7 +50,7 @@ const SEO = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:url" content={url} />
-      <meta property="og:site_name" content="Artistry Family Salon" />
+      <meta property="og:site_name" content="Demo Salon" />
       
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />

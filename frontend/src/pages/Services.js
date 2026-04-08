@@ -52,7 +52,7 @@ const Services = () => {
   return (
     <div className="bg-salon-black min-h-screen pt-16 pb-20 md:pb-0">
       <SEO 
-        title="Our Services | Artistry Family Salon Anand"
+        title="Our Services | Demo Salon"
         description="Explore our premium hair, skin, bridal, nails, spa and men's grooming services. Expert stylists using top brands. Book your appointment today."
       />
       

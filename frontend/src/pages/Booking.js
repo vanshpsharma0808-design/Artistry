@@ -80,7 +80,7 @@ const Booking = () => {
   if (bookingComplete) {
     return (
       <div className="bg-salon-charcoal min-h-screen pt-16 flex items-center justify-center pb-20 md:pb-0">
-        <SEO title="Booking Confirmed | Artistry Family Salon" />
+        <SEO title="Booking Confirmed | Demo Salon" />
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-salon-card-dark border border-salon-gold/20 p-8 sm:p-12 rounded-sm fade-in">
             <div className="w-16 h-16 bg-salon-gold rounded-full flex items-center justify-center mx-auto mb-6">
@@ -116,7 +116,7 @@ const Booking = () => {
 
   return (
     <div className="bg-salon-charcoal min-h-screen pt-16 pb-20 md:pb-0">
-      <SEO title="Book Appointment | Artistry Family Salon" />
+      <SEO title="Book Appointment | Demo Salon" />
       <div className="py-20 md:py-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-salon-gold mb-8 text-center fade-in" data-testid="booking-title">
