@@ -79,10 +79,10 @@ const Booking = () => {
 
   if (bookingComplete) {
     return (
-      <div className="bg-salon-black min-h-screen pt-16 flex items-center justify-center pb-20 md:pb-0">
+      <div className="bg-salon-charcoal min-h-screen pt-16 flex items-center justify-center pb-20 md:pb-0">
         <SEO title="Booking Confirmed | Artistry Family Salon" />
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-salon-card border border-salon-gold/20 p-8 sm:p-12 rounded-sm fade-in">
+          <div className="bg-salon-card-dark border border-salon-gold/20 p-8 sm:p-12 rounded-sm fade-in">
             <div className="w-16 h-16 bg-salon-gold rounded-full flex items-center justify-center mx-auto mb-6">
               <Check size={32} className="text-salon-black" />
             </div>
@@ -115,7 +115,7 @@ const Booking = () => {
   }
 
   return (
-    <div className="bg-salon-black min-h-screen pt-16 pb-20 md:pb-0">
+    <div className="bg-salon-charcoal min-h-screen pt-16 pb-20 md:pb-0">
       <SEO title="Book Appointment | Artistry Family Salon" />
       <div className="py-20 md:py-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,7 +130,7 @@ const Booking = () => {
             <p className="text-sm text-salon-champagne font-sans mt-2 text-right" data-testid="booking-step-indicator">Step {step} of 4</p>
           </div>
 
-          <div className="bg-salon-card border border-salon-gold/20 p-6 sm:p-8 rounded-sm min-h-[400px]">
+          <div className="bg-salon-card-dark border border-salon-gold/20 p-6 sm:p-8 rounded-sm min-h-[400px]">
             {step === 1 && (
               <div data-testid="booking-step-1" className="slide-in-right">
                 <h2 className="font-serif text-2xl text-salon-cream mb-6">Select Service</h2>
@@ -229,7 +229,7 @@ const Booking = () => {
                       value={formData.customer_name}
                       onChange={(e) => updateFormData('customer_name', e.target.value)}
                       data-testid="booking-input-name"
-                      className="min-h-[48px] w-full bg-salon-black border border-salon-gold/30 rounded-sm px-4 py-2 text-salon-cream focus:border-salon-gold focus:ring-1 focus:ring-salon-gold outline-none transition-all placeholder:text-salon-cream/30"
+                      className="min-h-[48px] w-full bg-salon-charcoal border border-salon-gold/30 rounded-sm px-4 py-2 text-salon-cream focus:border-salon-gold focus:ring-1 focus:ring-salon-gold outline-none transition-all placeholder:text-salon-cream/30"
                       placeholder="Enter your name"
                       autoComplete="name"
                     />
@@ -241,7 +241,7 @@ const Booking = () => {
                       value={formData.customer_phone}
                       onChange={(e) => updateFormData('customer_phone', e.target.value)}
                       data-testid="booking-input-phone"
-                      className="min-h-[48px] w-full bg-salon-black border border-salon-gold/30 rounded-sm px-4 py-2 text-salon-cream focus:border-salon-gold focus:ring-1 focus:ring-salon-gold outline-none transition-all placeholder:text-salon-cream/30"
+                      className="min-h-[48px] w-full bg-salon-charcoal border border-salon-gold/30 rounded-sm px-4 py-2 text-salon-cream focus:border-salon-gold focus:ring-1 focus:ring-salon-gold outline-none transition-all placeholder:text-salon-cream/30"
                       placeholder="Enter your phone number"
                       autoComplete="tel"
                     />
@@ -252,7 +252,7 @@ const Booking = () => {
                       value={formData.notes}
                       onChange={(e) => updateFormData('notes', e.target.value)}
                       data-testid="booking-input-notes"
-                      className="min-h-[96px] w-full bg-salon-black border border-salon-gold/30 rounded-sm px-4 py-2 text-salon-cream focus:border-salon-gold focus:ring-1 focus:ring-salon-gold outline-none transition-all placeholder:text-salon-cream/30"
+                      className="min-h-[96px] w-full bg-salon-charcoal border border-salon-gold/30 rounded-sm px-4 py-2 text-salon-cream focus:border-salon-gold focus:ring-1 focus:ring-salon-gold outline-none transition-all placeholder:text-salon-cream/30"
                       placeholder="Any special requests?"
                     />
                   </div>
