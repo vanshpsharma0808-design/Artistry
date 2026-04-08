@@ -14,17 +14,17 @@ const HeroSection = () => {
           backgroundImage: 'url(https://images.pexels.com/photos/21031387/pexels-photo-21031387.jpeg?auto=compress&cs=tinysrgb&w=1200)',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-salon-black/90 via-salon-black/60 to-salon-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-salon-charcoal/95 via-salon-rose-gold/30 to-salon-gold/20" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <h1 
-          className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-salon-gold mb-6 tracking-tight leading-none fade-in-up" 
+          className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-salon-gold mb-6 tracking-tight leading-none fade-in-up drop-shadow-lg" 
           data-testid="home-hero-title"
         >
           Artistry Family Salon
         </h1>
         <p 
-          className="font-sans text-xl sm:text-2xl text-salon-champagne mb-8 max-w-2xl fade-in-up" 
+          className="font-sans text-xl sm:text-2xl text-salon-cream mb-8 max-w-2xl fade-in-up drop-shadow-md" 
           style={{ animationDelay: '0.2s' }}
         >
           Where Every Visit Is an Experience
@@ -32,7 +32,7 @@ const HeroSection = () => {
         <Link
           to="/booking"
           data-testid="home-hero-cta"
-          className="inline-flex items-center gap-3 bg-salon-gold text-salon-black font-semibold min-h-[48px] px-8 py-3 rounded-sm hover:bg-[#DFC06E] transition-all duration-300 text-lg fade-in-up button-glow"
+          className="inline-flex items-center gap-3 bg-salon-gold text-salon-text-dark font-semibold min-h-[48px] px-8 py-3 rounded-sm hover:bg-salon-rose-gold transition-all duration-300 text-lg fade-in-up button-glow shadow-xl"
           style={{ animationDelay: '0.4s' }}
         >
           Book Your Appointment <ArrowRight size={20} />

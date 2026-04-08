@@ -13,12 +13,14 @@ module.exports = {
                         sm: 'calc(var(--radius) - 4px)'
                 },
                 colors: {
-                        'salon-black': '#0A0A0A',
-                        'salon-charcoal': '#111111',
-                        'salon-card': '#1A1A1A',
-                        'salon-cream': '#F5F0E8',
+                        'salon-charcoal': '#1C1410',
+                        'salon-cream': '#FDF6EC',
+                        'salon-card-dark': '#1A1208',
                         'salon-gold': '#C9A84C',
+                        'salon-rose-gold': '#C4956A',
                         'salon-champagne': '#E8D5A3',
+                        'salon-text-light': '#F5F0E8',
+                        'salon-text-dark': '#2C1810',
                         background: 'hsl(var(--background))',
                         foreground: 'hsl(var(--foreground))',
                         card: {

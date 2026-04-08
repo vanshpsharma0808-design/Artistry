@@ -10,10 +10,10 @@ const ReviewsSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-salon-charcoal pb-32 md:pb-32">
+    <section className="py-20 md:py-32 bg-salon-cream pb-32 md:pb-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-salon-gold text-center mb-16" data-testid="home-reviews-title">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-salon-text-dark text-center mb-16" data-testid="home-reviews-title">
             What Our Clients Say
           </h2>
         </AnimatedSection>
@@ -26,7 +26,7 @@ const ReviewsSection = () => {
           {reviews.map((review, idx) => (
             <div
               key={idx}
-              className="bg-salon-card border border-salon-gold/20 p-6 sm:p-8 rounded-sm hover:border-salon-gold/30 transition-all duration-300"
+              className="bg-white border border-salon-rose-gold/30 p-6 sm:p-8 rounded-sm hover:border-salon-gold hover:shadow-lg transition-all duration-300"
               data-testid={`home-review-${idx}`}
             >
               <div className="flex gap-1 mb-4">
@@ -34,8 +34,8 @@ const ReviewsSection = () => {
                   <Star key={i} size={18} fill="#C9A84C" className="text-salon-gold" />
                 ))}
               </div>
-              <p className="text-salon-cream/80 font-sans text-sm leading-relaxed mb-4">"{review.text}"</p>
-              <p className="font-sans font-bold text-salon-champagne text-sm">- {review.name}</p>
+              <p className="text-salon-text-dark/70 font-sans text-sm leading-relaxed mb-4">"{review.text}"</p>
+              <p className="font-sans font-bold text-salon-rose-gold text-sm">- {review.name}</p>
             </div>
           ))}
         </AnimatedSection>

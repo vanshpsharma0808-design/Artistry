@@ -23,12 +23,13 @@ const Navbar = () => {
       <nav 
         className="fixed top-0 left-0 right-0 z-50 navbar-default border-b border-salon-gold/20"
         data-navbar
+        style={{ backgroundColor: 'rgba(28, 20, 16, 0.9)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link 
               to="/" 
-              className="font-serif text-2xl font-bold text-salon-gold transition-all duration-300 hover:text-salon-champagne" 
+              className="font-serif text-2xl font-bold text-salon-gold transition-all duration-300 hover:text-salon-rose-gold" 
               data-testid="nav-logo"
             >
               Artistry Family Salon
@@ -43,7 +44,7 @@ const Navbar = () => {
                   className={`text-sm font-sans tracking-wide transition-all duration-300 ${
                     isActive(link.path) 
                       ? 'text-salon-gold' 
-                      : 'text-salon-cream hover:text-salon-champagne'
+                      : 'text-salon-text-light hover:text-salon-rose-gold'
                   }`}
                 >
                   {link.name}
@@ -52,7 +53,7 @@ const Navbar = () => {
               <Link
                 to="/booking"
                 data-testid="nav-book-now"
-                className="bg-salon-gold text-salon-black font-semibold min-h-[48px] px-8 py-3 rounded-sm hover:bg-[#DFC06E] transition-all duration-300 flex items-center justify-center button-glow"
+                className="bg-salon-gold text-salon-text-dark font-semibold min-h-[48px] px-8 py-3 rounded-sm hover:bg-salon-rose-gold transition-all duration-300 flex items-center justify-center button-glow"
               >
                 Book Now
               </Link>
@@ -70,7 +71,7 @@ const Navbar = () => {
         </div>
 
         {isOpen && (
-          <div className="md:hidden bg-salon-charcoal border-t border-salon-gold/20 backdrop-blur-lg" data-testid="nav-mobile-menu">
+          <div className="md:hidden bg-salon-card-dark border-t border-salon-gold/20 backdrop-blur-lg" data-testid="nav-mobile-menu">
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
                 <Link
@@ -79,7 +80,7 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   data-testid={`nav-mobile-${link.name.toLowerCase()}`}
                   className={`block py-3 text-base font-sans transition-colors duration-300 ${
-                    isActive(link.path) ? 'text-salon-gold' : 'text-salon-cream'
+                    isActive(link.path) ? 'text-salon-gold' : 'text-salon-text-light'
                   }`}
                 >
                   {link.name}
@@ -89,7 +90,7 @@ const Navbar = () => {
                 to="/booking"
                 onClick={() => setIsOpen(false)}
                 data-testid="nav-mobile-book-now"
-                className="block w-full bg-salon-gold text-salon-black font-semibold min-h-[48px] px-8 py-3 rounded-sm text-center button-glow"
+                className="block w-full bg-salon-gold text-salon-text-dark font-semibold min-h-[48px] px-8 py-3 rounded-sm text-center button-glow"
               >
                 Book Now
               </Link>

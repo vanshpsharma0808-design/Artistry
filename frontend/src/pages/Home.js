@@ -7,7 +7,7 @@ import ReviewsSection from '../components/home/ReviewsSection';
 
 const Home = () => {
   return (
-    <div className="bg-salon-black min-h-screen">
+    <div className="bg-salon-charcoal min-h-screen">
       <SEO />
       <HeroSection />
       <FeaturesSection />
