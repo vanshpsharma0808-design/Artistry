@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center ken-burns"
         style={{ 
-          backgroundImage: 'url(https://images.pexels.com/photos/21031387/pexels-photo-21031387.jpeg?auto=compress&cs=tinysrgb&w=1200)',
+          backgroundImage: 'url(/hero-salon.png)',
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-salon-charcoal/95 via-salon-rose-gold/30 to-salon-gold/20" />
